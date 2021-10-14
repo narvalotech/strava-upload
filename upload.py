@@ -13,6 +13,7 @@ with open('app.json') as f:
 name = 'Commute'
 act_type = 'Ride'
 start_date_local = datetime.now().isoformat()
+# start_date_local = datetime(2021, 10, 7, 17, 00).isoformat()
 elapsed_time = (60 * 25)
 description = 'Commute by bicycle'
 distance = '10000'
