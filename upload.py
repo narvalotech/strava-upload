@@ -60,8 +60,11 @@ if debug:
     print(response.json())
 
 for r in response.json():
+    d = datetime.fromisoformat(r['start_date_local'][0:-1])
+    datestring = '{}  {:2d}:{:02d}'.format(d.date().isoformat(),
+                                           d.hour, d.minute)
     print('({}) {:20} {:6} km, {:5} mins, avg {:3} km/h'.format(
-        r['start_date_local'],
+        datestring,
         r['name'],
         r['distance'] / 1000,
         r['elapsed_time'] / 60,
